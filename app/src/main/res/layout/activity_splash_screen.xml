@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00AEEF"
+    tools:context=".SplashScreen"
+    >
+    <ImageView
+        android:id="@+id/SplashScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash_screen"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/SplashScreen"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id = "@+id/rotateImg"
+        android:src="@drawable/rotating_logo"
+        android:layout_marginHorizontal="124dp"
+        android:paddingTop="23dp"
+        android:layout_marginBottom="223dp"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/SplashScreen"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/designed_by_u2avisioneers_io"
+        android:gravity= "bottom|center"
+        android:padding="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20sp"
+        android:textColor="#FFE500"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
