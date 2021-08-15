@@ -1,20 +1,24 @@
 package com.example.le;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-
+import java.util.concurrent.ThreadLocalRandom;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,14 +35,14 @@ public class SplashScreen extends AppCompatActivity {
             finish();
         }, 3700);
 
-        RotateAnimation rotate = new RotateAnimation(
-                0, 360,
+        int randomNum = ThreadLocalRandom.current().nextInt(2500, 3500 + 1);
+        ImageView imageView = (ImageView) findViewById(R.id.spin_part);
+        RotateAnimation rotateAnimation = new RotateAnimation(0, 360f,
                 Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f
-        );
-        rotate.setDuration(1000);
-        rotate.setRepeatCount(Animation.INFINITE);
-        ImageView imageView = findViewById(R.id.rotateImg);
-        imageView.startAnimation(rotate);
+                Animation.RELATIVE_TO_SELF, 0.5f);
+
+        rotateAnimation.setInterpolator(new LinearInterpolator());
+        rotateAnimation.setDuration(randomNum);
+        imageView.startAnimation(rotateAnimation);
     }
 }

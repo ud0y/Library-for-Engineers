@@ -5,34 +5,114 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00AEEF"
-    tools:context=".SplashScreen"
-    >
+    tools:context=".SplashScreen">
+
     <ImageView
-        android:id="@+id/SplashScreen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/splash_screen"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="@string/SplashScreen"/>
-    <ImageView
-        android:layout_width="match_parent"
+        android:id="@id/left"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id = "@+id/rotateImg"
-        android:src="@drawable/rotating_logo"
-        android:layout_marginHorizontal="124dp"
-        android:paddingTop="23dp"
-        android:layout_marginBottom="223dp"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="@string/SplashScreen"/>
+        android:src="@drawable/part_1"
+
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toStartOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/part_2"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/part_3"
+        app:layout_constraintBottom_toTopOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:src="@drawable/part_4"
+        app:layout_constraintBottom_toBottomOf="@+id/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spin_part" />
+
+    <ImageView
+        android:id="@+id/front_pic"
+        android:layout_width="315dp"
+        android:layout_height="312dp"
+        android:contentDescription="@string/SplashScreen"
+        android:src="@drawable/ic_frontpic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/stilllogo"
+        app:layout_constraintBottom_toTopOf="@+id/front_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/spin_part"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="50dp"
+        android:contentDescription="@string/animation"
+        android:src="@drawable/gear"
+        app:layout_constraintBottom_toBottomOf="@+id/logo"
+        app:layout_constraintEnd_toEndOf="@+id/logo"
+        app:layout_constraintStart_toStartOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="@+id/logo"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/animation"
+        android:src="@drawable/appname"
+        app:layout_constraintBottom_toTopOf="@+id/front_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/designed_by_u2avisioneers_io"
-        android:gravity= "bottom|center"
-        android:padding="20dp"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:textSize="20sp"
+        android:gravity="bottom|center"
+        android:padding="20dp"
+        android:text="@string/designed_by_u2avisioneers_io"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#FFE500"
-        tools:ignore="MissingConstraints" />
+        android:textSize="20sp"
+        android:typeface="normal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints,TextContrastCheck"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

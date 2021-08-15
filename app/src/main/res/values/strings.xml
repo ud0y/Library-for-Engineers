@@ -2,4 +2,8 @@
     <string name="app_name">LE</string>
     <string name="SplashScreen">SS</string>
     <string name="designed_by_u2avisioneers_io">Designed By - U2AVISIONEERS.IO</string>
+    <string name="logo">logo</string>
+    <string name="LE">Library for Engineers</string>
+    <string name="animation">animation</string>
+    <string name="todo">simple as ...</string>
 </resources>
